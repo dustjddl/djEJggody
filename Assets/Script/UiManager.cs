@@ -79,10 +79,12 @@ public class UiManager : MonoBehaviour
         Debug.Log("게임 종료!");
         SceneManager.LoadScene("EndScene");
     }
+
+    // 시간이 지남에 따라 타이머가 줄어들고 타이머가 0이 되면 게임오버 함수호출
     public void UpdateTime()
     {
         CurrentTime -= Time.deltaTime;
-        TextTimer.text = "Time: " + Mathf.CeilToInt(CurrentTime).ToString();
+        TextTimer.text = "Time: " + Mathf.CeilToInt(CurrentTime).ToString(); // Mathf.CeilToInt()을 사용하여 CurrentTime의 값을 정수로 변환
 
         if (CurrentTime <= 0)
         {
